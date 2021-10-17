@@ -1,0 +1,118 @@
+@import "../../SCSS/_mixins.scss";
+@import "../../SCSS/variabili";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.top-section {
+  display: grid;
+  grid-template-columns: 60% auto;
+  height: 500px;
+  @include mediaQuery(680px){
+    grid-template-columns: 100%;
+  }
+
+  .left {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 1rem;
+    place-content: center;
+    background: url("../../../assets/images/topsection.jpg");
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    @include mediaQuery(1000px){
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .description{
+        text-align: center;
+      }
+    }
+
+    .profile-image {
+      width: 22vw;
+      height: 22vw;
+      border-radius: 50%;
+      border: 10px solid rgba($color: #ffffff, $alpha: 0.9);
+      overflow: hidden;
+      transition: .4s;
+      @include mediaQuery(680px){
+        width: 15rem;
+        height: 15rem;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: .5s;
+
+        &:hover {
+          transform: scale(1.06);
+        }
+      }
+    }
+
+    .description {
+      align-self: center;
+      color: #ffffff;
+    }
+
+
+
+    h1 {
+      text-transform: uppercase;
+
+      &:first-child {
+        font-size: 6.72vw;
+      }
+
+      &:nth-child(2) {
+        letter-spacing: 1.91vw;
+      }
+    }
+  }
+
+  .caption {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: rgba($color: #000000, $alpha: 0.5);
+    @include mediaQuery(680px){
+      display: none;
+    }
+
+    #one {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 8.33vw;
+    }
+
+    #two {
+      position: absolute;
+      top: 25%;
+      left: 10%;
+      font-size: 6rem;
+    }
+
+    #three {
+      position: absolute;
+      top: 45%;
+      left: 40%;
+      font-size: 4rem;
+    }
+
+    #four {
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      transform: translate(-50%);
+      font-size: 10.42vw;
+    }
+  }
+}
