@@ -50,18 +50,22 @@
     }
   }
 
-  svg {
-    position: absolute;
-    top: 20%;
-    right: 9.5%;
-    width: 50rem;
-  }
-
   .button-container {
+    position: relative;
     display: grid;
 
     @include mediaQuery(680px) {
       display: none;
+    }
+    svg {
+      position: absolute;
+      top: 10%;
+      left:-7%;
+      transition: .5s;
+      @include mediaQuery(1000px){
+        left: 50%;
+        transform: translate(-50%);
+      }
     }
 
     button {
